@@ -1,5 +1,6 @@
-# This request returns basic account details from the API and verifies that the key is valid
-from config import MailChimpConfig, CallOutput
+# This example shows a basic GET request that returns all data.
+
+from config import MailChimpConfig
 import requests, json
 
 config = MailChimpConfig()
@@ -9,4 +10,11 @@ endpoint = config.api_root + "/"
 
 response = requests.get(endpoint, headers=headers)
 
-CallOutput(response)
+print response.url
+print "Response Code: " + str(response.status_code) + " " + response.reason
+print "Headers:"
+for header in response.headers:
+    print '\t'.join(['',header.ljust(20), response.headers[header]])
+
+print "\nJSON:"
+print json.dumps(response.json(), indent=4)

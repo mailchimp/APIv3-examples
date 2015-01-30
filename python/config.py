@@ -18,17 +18,6 @@ class MailChimpConfig:
             print "The API Key should have both a key and a server name, separated by a dash, like this: abcdefg8abcdefg6abcdefg4-us1"
             sys.exit()
 
-        self.apikey   = parts[0]
+        self.apikey   = apikey
         self.shard    = parts[1]
         self.api_root = "https://" + self.shard + ".api.mailchimp.com/3.0"
-
-
-def CallOutput(response):
-    print response.url
-    print "Response Code: " + str(response.status_code) + " " + response.reason
-    print "Headers:"
-    for header in response.headers:
-        print '\t'.join(['',header.ljust(20), response.headers[header]])
-
-    print "\nJSON:"
-    print json.dumps(response.json(), indent=4, sort_keys=True)
