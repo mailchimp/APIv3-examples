@@ -20,7 +20,7 @@ while True:
     body     = response.json()
 
     if (response.status_code != 200):
-        print "Error: " + str(response.status_code) + " " + response.reason
+        print "Error: {} {}".format(str(response.status_code), response.reason)
         print json.dumps(response.json(), indent=4)
         break
 
@@ -30,7 +30,8 @@ while True:
     total_lists += len(body['lists'])
 
     for list in response.json()['lists']:
-        print list['id'] + ": " + list['name'] + " (Subscribers: " + str(list['stats']['member_count']) + ")"
+        print u'{}: {} (Subscribers: {})'.format(list['id'], list['name'], list['stats']['member_count'])
+        
     params['offset'] += params['count']
 
 print "\n" + str(total_lists) + " lists found."

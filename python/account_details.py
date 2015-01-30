@@ -11,7 +11,7 @@ endpoint = config.api_root + "/"
 response = requests.get(endpoint, headers=headers)
 
 print response.url
-print "Response Code: " + str(response.status_code) + " " + response.reason
+print 'Error: {} {}'.format(str(response.status_code), response.reason)
 print "Headers:"
 for header in response.headers:
     print '\t'.join(['',header.ljust(20), response.headers[header]])
