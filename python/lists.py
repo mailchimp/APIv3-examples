@@ -7,7 +7,6 @@ import requests, json
 config = MailChimpConfig()
 
 endpoint = config.api_root + "/lists"
-headers  = {'Authorization': 'apikey ' + config.apikey}       # Authentication is done via request header in version 3.0
 params   = {
     'fields': 'lists.id,lists.name,lists.stats.member_count', # With Partial Response, you choose which fields you want to see
     'count': 10, 'offset': 0                                  # Pagination in API v3.0 is always done with count and offset
@@ -16,7 +15,7 @@ params   = {
 total_lists = 0
 
 while True:
-    response = requests.get(endpoint, headers=headers, params=params)
+    response = requests.get(endpoint, auth=('apikey', config.apikey), params=params, verify=False)
     body     = response.json()
 
     if (response.status_code != 200):

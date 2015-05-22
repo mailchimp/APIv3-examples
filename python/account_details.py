@@ -5,10 +5,9 @@ import requests, json
 
 config = MailChimpConfig()
 
-headers  = {'Authorization': 'apikey ' + config.apikey}       # Authentication is done via request header in version 3.0
 endpoint = config.api_root + "/"
 
-response = requests.get(endpoint, headers=headers)
+response = requests.get(endpoint, auth=('apikey', config.apikey))
 
 print response.url
 print 'Error: {} {}'.format(str(response.status_code), response.reason)
