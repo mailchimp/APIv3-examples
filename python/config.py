@@ -1,5 +1,5 @@
-import os.path
-import sys, json
+import os
+import sys
 
 
 class MailChimpConfig:
@@ -18,6 +18,6 @@ class MailChimpConfig:
             print "The API Key should have both a key and a server name, separated by a dash, like this: abcdefg8abcdefg6abcdefg4-us1"
             sys.exit()
 
-        self.apikey   = apikey
-        self.shard    = parts[1]
-        self.api_root = "https://" + self.shard + ".api.mailchimp.com/3.0"
+        self.apikey = apikey
+        self.shard = parts[1]
+        self.api_root = "https://" + self.shard + ".api.mailchimp.com/3.0/"
