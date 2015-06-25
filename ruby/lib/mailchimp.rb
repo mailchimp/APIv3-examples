@@ -1,5 +1,4 @@
 require 'httparty'
-require 'byebug'
 
 require './lib/mailchimp/list'
 
