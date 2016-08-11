@@ -13,7 +13,7 @@ from config import MailChimpConfig, GetCampaignID
 config = MailChimpConfig()
 campaign_id = GetCampaignID()
 
-email = "campaigns/{0}/actions/send".format(campaign_id)
+email = "campaigns/{0}/actions/send".format(campaign_id.cid)
 endpoint = config.api_root + email
 
 response = requests.post(endpoint, auth=('apikey', config.apikey))

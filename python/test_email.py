@@ -7,7 +7,7 @@ from config import MailChimpConfig, GetCampaignID
 config = MailChimpConfig()
 campaign_id = GetCampaignID()
 
-test = "campaigns/{0}/actions/test".format(campaign_id)
+test = "campaigns/{0}/actions/test".format(campaign_id.cid)
 endpoint = config.api_root + test
 
 payload = json.dumps({"test_emails":["robdentonrg@gmail.com"],"send_type":"html"})
