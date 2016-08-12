@@ -4,7 +4,8 @@ import sys
 
 class MailChimpConfig:
     def __init__(self):
-        if os.path.isfile('../APIKEY') == False:
+        #if os.path.isfile('../APIKEY') == False:
+        if os.path.isfile('/home/newsoper/Envs/mailchimp/APIv3-examples/APIKEY') == False: 
             print "Please enter your API Key into the APIKEY file as mentioned in README.md"
             sys.exit()
 
