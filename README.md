@@ -1,3 +1,7 @@
+# RG directions
+
+If there are any issues ssh into wave as newsoper and check the logs in ~/Envs/mailchimp/APIv3-examples/python/logs/mailchimp.log.
+
 # MailChimp API v3.0 Examples
 
 Whithin this repository, you'll find straight-forward examples of working with v3 the MailChimp API without any
@@ -16,3 +20,5 @@ We welcome pull requests to these examples to fix bugs or demonstrate new behavi
 
 If there's a certain kind of problem you'd like to see an example of or a language you'd like to 
 see supported, please open a GitHub issue. Note, we can't promise that we'll be able to address all requests.
+
+
