@@ -100,29 +100,28 @@ def sendTest(key, id):
 		print "\n\nTEST SENT!!!\n\n"
 	except requests.exceptions.HTTPError as err:
 		print '\n\n\nError: %s' % err
+	
+
+def sendEmail(key, id):
+	email = "campaigns/{0}/actions/send".format(id)
+	endpoint = config.api_root + email
+	
+	response = requests.post(endpoint, auth=('apikey', key))
+	
+	#print "\nURL: " + response.url + "\n\n"
+	
+	try:
+		response.raise_for_status()
+		print "\n\nCAMPAIGN SENT!!!\n\n"
+	except requests.exceptions.HTTPError as err:
+		print '\n\n\nError: %s' % err
+		print response.json()
+
 
 # Call method
 campaign_id = createCampaign(config.apikey)
-#campaign_id = "3b97b6caca" # For testing (use last created campaign ID)
-print campaign_id
+#campaign_id = "ea9d94e671" # For testing (use last created campaign ID)
+#print campaign_id
 setContent(config.apikey, campaign_id)
-sendTest(config.apikey, campaign_id)
-
-# email = "campaigns/{0}/actions/send".format(campaign_id.cid)
-# endpoint = config.api_root + email
-# 
-# response = requests.post(endpoint, auth=('apikey', config.apikey))
-# 
-# #print "\nURL: " + response.url + "\n\n"
-# 
-# try:
-#     response.raise_for_status()
-#     print "\n\nSENT!!!\n\n"
-# except requests.exceptions.HTTPError as err:
-#     print '\n\n\nError: %s' % err
-# 
-# print "\nHeaders:"
-# for header in response.headers:
-#     print '\t'.join(['',header.ljust(20), response.headers[header]])
-
-
+#sendTest(config.apikey, campaign_id)
+sendEmail(config.apikey, campaign_id)
