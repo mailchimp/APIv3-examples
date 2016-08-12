@@ -1,4 +1,4 @@
-#!/home/newsoper/Envs/mailchimp/bin/python2.7
+#!/home/newsoper/Envs/mailchimpda/bin/python2.7
 #
 #            !!! DANGER !!!
 #            !!! DANGER !!!
@@ -116,7 +116,7 @@ def sendEmail(key, id):
 	
 	try:
 		response.raise_for_status()
-		print "\n\nCAMPAIGN SENT!!!\n\n"
+		#print "\n\nCAMPAIGN SENT!!!\n\n"
 	except requests.exceptions.HTTPError as err:
 		print '\n\n\nError: %s' % err
 		print response.json()
