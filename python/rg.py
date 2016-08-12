@@ -6,9 +6,12 @@
 # This script will send an email to all recipients of campaign
 # To test the email, use the test_email.py file
 
-import requests
-import json
+import requests # Need to install
+import json, datetime
 from config import MailChimpConfig
+
+today = datetime.date.today()
+date = "{:%x}".format(today)
 
 config = MailChimpConfig()
 # print campaign_id
@@ -33,9 +36,9 @@ def createCampaign(key):
 	}
 	
 	meta['settings'] = {
-		'subject_line': 'RG Daily Digest',
+		'subject_line': 'RG Daily Digest: *|DATE:l, F j, Y|*',
 		'from_name': 'The Register-Gard',
-		'title': 'Rob API test 1',
+		'title': 'Rob API Test: {0}'.format(date),
 		'inline_css': True,
 		'fb_comments': False,
 		'auto_footer': False,
