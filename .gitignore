@@ -3,4 +3,4 @@ APIKEY
 logs
 *.json
 read-*
-rg.py
+python/rg.py
