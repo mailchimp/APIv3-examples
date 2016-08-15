@@ -4,3 +4,4 @@ CID
 logs
 *.json
 read-*
+rg.py
