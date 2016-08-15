@@ -26,10 +26,14 @@ def createCampaign(key):
 	meta['recipients'] = {
 		'segment_opts': {
 			'conditions': [{
-				'field': 'EMAIL',
-				'condition_type': 'EmailAddress',
-				'value': 'rob.denton',
-				'op': 'contains'
+				# 'field': 'EMAIL',
+				# 'condition_type': 'EmailAddress',
+				# 'value': 'rob.denton',
+				# 'op': 'contains'
+				'field': 'interests-3fcd22fb3e',
+				'condition_type': 'Interests',
+				'value': ['a51e8d83ce'],
+				'op': 'interestcontains'
 			}],
 			'match': 'any'
 		},
@@ -37,7 +41,7 @@ def createCampaign(key):
 	}
 	
 	meta['settings'] = {
-		'subject_line': 'RG Daily Digest: *|DATE:l, F j, Y|*',
+		'subject_line': '[TESTING] RG Daily Digest: *|DATE:l, F j, Y|*',
 		'from_name': 'The Register-Gard',
 		'title': 'Rob API Test: {0}'.format(date),
 		'inline_css': True,
@@ -128,4 +132,4 @@ campaign_id = createCampaign(config.apikey)
 #print campaign_id
 setContent(config.apikey, campaign_id)
 #sendTest(config.apikey, campaign_id)
-sendEmail(config.apikey, campaign_id)
+#sendEmail(config.apikey, campaign_id)

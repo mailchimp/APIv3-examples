@@ -2,3 +2,5 @@ APIKEY
 CID
 *.pyc
 logs
+*.json
+read-*
