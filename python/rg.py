@@ -132,4 +132,4 @@ campaign_id = createCampaign(config.apikey)
 #print campaign_id
 setContent(config.apikey, campaign_id)
 #sendTest(config.apikey, campaign_id)
-#sendEmail(config.apikey, campaign_id)
+sendEmail(config.apikey, campaign_id)
