@@ -7,13 +7,13 @@ from config import MailChimpConfig
 config = MailChimpConfig()
 
 # Set your variables here
-campaign_id = "ABCD1234" # INSERT CAMPAIGN ID HERE
+campaign_id = 'ABCD1234' # INSERT CAMPAIGN ID HERE
 test_email = ["test@test.com"] # INSERT TEST EMAIL HERE
 
 test = "campaigns/{0}/actions/test".format(campaign_id)
 endpoint = config.api_root + test
 
-payload = json.dumps({"test_emails": test_email, "send_type": "html"})
+payload = json.dumps({'test_emails': test_email, 'send_type': 'html'})
 
 #print  "\nPayload: " + payload
 

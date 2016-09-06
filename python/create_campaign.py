@@ -7,7 +7,7 @@ from config import MailChimpConfig
 
 config = MailChimpConfig()
 
-path = "campaigns"
+path = 'campaigns'
 endpoint = config.api_root + path
 
 # Create metadata for campaign
@@ -54,4 +54,4 @@ try:
     # Print out new campaign ID to do something else with it (like set content)
     print id
 except requests.exceptions.HTTPError as err:
-    print '\n\n\nError: %s' % err
+    print "\n\n\nError: %s" % err
