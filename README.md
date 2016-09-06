@@ -6,7 +6,7 @@ folder, and each of those folders will have a README.md file describing what the
 
 ## General Instructions
 
-Each of the examples will expect to find an API key in a file called 'APIKEY' here in the root folder.
+Each of the examples will expect to find an API key in a file called 'APIKEY' here in the root folder. 
 
 ## Contributions
 
