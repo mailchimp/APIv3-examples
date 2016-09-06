@@ -1,6 +1,2 @@
 APIKEY
 *.pyc
-logs
-*.json
-read-*
-python/rg.py

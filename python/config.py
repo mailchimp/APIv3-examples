@@ -21,15 +21,3 @@ class MailChimpConfig:
         self.apikey = apikey
         self.shard = parts[1]
         self.api_root = "https://" + self.shard + ".api.mailchimp.com/3.0/"
-
-class GetCampaignID:
-    def __init__(self):
-        if os.path.isfile('../CID') == False:
-            print "Please enter your Campaign ID into a CID file in the root"
-            sys.exit()
-
-        f = open('../CID', 'r+')
-        cid = f.read().strip()
-        f.close()
-
-        self.cid = cid
